@@ -1,0 +1,31 @@
+<?php
+    return [
+        'id' => 'blog',
+        'basePath' => realpath(__DIR__ . '/../'),
+        'bootstrap' => ['log'],
+        'modules' => [
+            'gii' => [
+                'class' => 'yii\gii\Module',
+                'allowedIPs' => ['*']
+            ]
+        ],
+        'extensions' => require(__DIR__ . '/../vendor/yiisoft/extensions.php'),
+        'components' => [
+            'request' => [
+                'cookieValidationKey' => 'Itl635iCHuw0BbESIUywVdCWFoIPY4Tz',
+            ],
+            'urlManager' => [
+                'enablePrettyUrl' => true,
+                'showScriptName' => false
+            ],
+            'log' => [
+                'traceLevel' => YII_DEBUG ? 3 : 0,
+                'targets' => [
+                    [
+                        'class' => 'yii\log\FileTarget',
+                        'levels' => ['error', 'warning'],
+                    ],
+                ],
+            ]
+        ],
+    ];
