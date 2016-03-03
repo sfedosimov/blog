@@ -15,11 +15,13 @@ body {
 }
 
 .footer {
-    height: 60px;
-    background-color: #00ad89;
+    padding-top: 10px;
+    color: #00ad89;
     border-top: 1px solid #00ad89;
-    padding-top: 20px;
-    color: #d1ffed;
+}
+
+.footer .container {
+    text-align: center;
 }
 
 .jumbotron {
@@ -89,4 +91,12 @@ a.desc:after {
     border-left: 3px solid #eed3d7;
     padding: 10px 20px;
     margin: 0 0 15px 0;
+}
+
+a.a-green {
+    color: #00ad89;
+}
+
+a.a-green:hover {
+    color: #00c79d;
 }

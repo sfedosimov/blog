@@ -12,10 +12,13 @@
      */
     class AppAsset extends AssetBundle
     {
-        public $sourcePath = '@app/assets';
+        public $basePath = '@webroot';
+        public $baseUrl = '@web';
+
         public $css = [
             'css/site.css',
             'css/navbar.css',
+            'css/font-awesome.min.css'
         ];
         public $js = [
         ];

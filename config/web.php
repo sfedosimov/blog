@@ -16,7 +16,13 @@
             ],
             'urlManager' => [
                 'enablePrettyUrl' => true,
-                'showScriptName' => false
+                'showScriptName' => false,
+                'suffix' => '/',
+                'rules' => [
+                    'blog' => 'site/index',
+                    'about' => 'site/about',
+                    'portfolio' => 'site/portfolio',
+                ],
             ],
             'log' => [
                 'traceLevel' => YII_DEBUG ? 3 : 0,

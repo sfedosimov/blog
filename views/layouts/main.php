@@ -24,7 +24,7 @@
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'Fedosimoff.RU',
+                'brandLabel' => 'Здесь будет лого',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-green navbar-fixed-top navbar-small',
@@ -49,9 +49,10 @@
         </div>
     </div>
 
-    <footer class="footer">
+    <footer class="footer navbar-fixed-bottom">
         <div class="container">
-            <p class="pull-left">&copy; Fedosimoff.RU <?= date('Y') ?></p>
+            <p><i class="fa fa-envelope"></i> <a class="a-green" href="mailto:sergey@fedosimoff.ru">sergey@fedosimoff.ru</a></p>
+            <p><i class="fa fa-skype"></i> <a class="a-green" href="skype:Urishev?call">Urishev</a></p>
         </div>
     </footer>
 

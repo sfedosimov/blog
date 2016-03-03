@@ -9,4 +9,14 @@
         {
             return $this->render('index');
         }
+
+        public function actionAbout()
+        {
+            return $this->render('about');
+        }
+
+        public function actionPortfolio()
+        {
+            return $this->render('portfolio');
+        }
     }
