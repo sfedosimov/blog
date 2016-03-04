@@ -22,6 +22,7 @@
                     'blog' => 'site/index',
                     'about' => 'site/about',
                     'portfolio' => 'site/portfolio',
+                    'books' => 'site/books',
                 ],
             ],
             'log' => [

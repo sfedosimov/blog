@@ -19,4 +19,9 @@
         {
             return $this->render('portfolio');
         }
+
+        public function actionBooks()
+        {
+            return $this->render('books');
+        }
     }
