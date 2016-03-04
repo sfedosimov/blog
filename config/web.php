@@ -1,38 +1,39 @@
 <?php
     return [
-        'id' => 'blog',
-        'basePath' => realpath(__DIR__ . '/../'),
-        'bootstrap' => ['log'],
-        'modules' => [
+        'id'         => 'blog',
+        'basePath'   => realpath(__DIR__ . '/../'),
+        'bootstrap'  => ['log'],
+        'modules'    => [
             'gii' => [
-                'class' => 'yii\gii\Module',
+                'class'      => 'yii\gii\Module',
                 'allowedIPs' => ['*']
             ]
         ],
         'extensions' => require(__DIR__ . '/../vendor/yiisoft/extensions.php'),
         'components' => [
-            'request' => [
+            'request'    => [
                 'cookieValidationKey' => 'Itl635iCHuw0BbESIUywVdCWFoIPY4Tz',
             ],
             'urlManager' => [
                 'enablePrettyUrl' => true,
-                'showScriptName' => false,
-                'suffix' => '/',
-                'rules' => [
-                    'blog' => 'site/index',
-                    'about' => 'site/about',
+                'showScriptName'  => false,
+                'suffix'          => '/',
+                'rules'           => [
+                    'blog'      => 'site/index',
+                    'about'     => 'site/about',
                     'portfolio' => 'site/portfolio',
-                    'books' => 'site/books',
+                    'books'     => 'site/books',
                 ],
             ],
-            'log' => [
+            'log'        => [
                 'traceLevel' => YII_DEBUG ? 3 : 0,
-                'targets' => [
+                'targets'    => [
                     [
-                        'class' => 'yii\log\FileTarget',
+                        'class'  => 'yii\log\FileTarget',
                         'levels' => ['error', 'warning'],
                     ],
                 ],
-            ]
+            ],
+            'db'         => require(__DIR__ . '/db.php'),
         ],
     ];
