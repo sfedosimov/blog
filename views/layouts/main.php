@@ -27,7 +27,7 @@
                 'brandLabel' => 'Здесь будет лого',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-green navbar-fixed-top navbar-small',
+                    'class' => 'navbar-green navbar-small',
                 ],
             ]);
             echo Nav::widget([
@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <footer class="footer navbar-fixed-bottom">
+    <footer class="footer">
         <div class="container">
             <p><i class="fa fa-envelope"></i> <a class="a-green" href="mailto:sergey@fedosimoff.ru">sergey@fedosimoff.ru</a></p>
             <p><i class="fa fa-skype"></i> <a class="a-green" href="skype:Urishev?call">Urishev</a></p>

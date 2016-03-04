@@ -1,6 +1,7 @@
 <?php
 
-use yii\helpers\Html;
+    use yii\db\ActiveQuery;
+    use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
@@ -34,6 +35,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'text:ntext',
             'updated_at',
             'created_at',
+            [
+                'format' => 'html',
+                'label' => 'tags',
+                'value' => '<span class="label label-primary">'
+                    . implode('</span> <span class="label label-primary">',
+                        //TODO сделать метод в модели
+                        $model->getTags()->select('name')->asArray()->column()) . '</span>',
+            ],
         ],
     ]) ?>
 

@@ -64,18 +64,13 @@ class ArticleController extends Controller
      */
     public function actionCreate()
     {
-        /*if (Yii::$app->request->post()) {
-            return print_r(Yii::$app->request->post('Article')['tags'], true);
-        }*/
-
         $model = new Article();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $tags = Yii::$app->request->post('Article')['tags'];
+            $tags = Yii::$app->request->post('Article')['art_tags'];
             if (!is_array($tags)) throw new Exception('Alarm!');
             foreach($tags as $tag) {
                 $obj = new ArticleTag;
-                $obj->article_id = $model->id;
                 $obj->tag_id = $tag;
                 $model->link('articleTags', $obj);
             }
@@ -101,6 +96,8 @@ class ArticleController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
+            //TODO сделать метод в модели
+            $model->art_tags = $model->getTags()->select('id')->asArray()->column();
             return $this->render('update', [
                 'model' => $model,
             ]);

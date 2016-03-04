@@ -20,10 +20,10 @@
 
     <?= $form->field($model, 'text')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'tags')->widget(
+    <?= $form->field($model, 'art_tags')->widget(
         Chosen::className(), [
+        //TODO сделать метод в модели
         'items'         => ArrayHelper::map(\app\models\Tag::find()->all(), 'id', 'name'),
-        'value'         => $model->getTags(), // FIXME: NOT WORK!!!!
         'disableSearch' => 2, // Search input will be disabled while there are fewer than 5 items
         'multiple'      => true,
         'placeholder'   => 'Выберите теги',
