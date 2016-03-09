@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Article;
+use app\models\Tag;
 
 /**
- * ArticleSearch represents the model behind the search form about `app\models\Article`.
+ * TagSearch represents the model behind the search form about `app\models\Tag`.
  */
-class ArticleSearch extends Article
+class TagSearch extends Tag
 {
     /**
      * @inheritdoc
@@ -19,7 +19,7 @@ class ArticleSearch extends Article
     {
         return [
             [['id'], 'integer'],
-            [['title', 'desc', 'text', 'updated_at', 'created_at', 'art_tags'], 'safe'],
+            [['name'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class ArticleSearch extends Article
      */
     public function search($params)
     {
-        $query = Article::find();
+        $query = Tag::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -52,26 +52,14 @@ class ArticleSearch extends Article
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
-
             return $dataProvider;
-        }
-
-        // поиск по тегам
-        if (is_array($this->art_tags)) {
-            $query->joinWith('tags');
-            foreach($this->art_tags as $tkey => $tval)
-                $query->orFilterWhere(['=', '{{%tag}}.id', $tval]);
         }
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'updated_at' => $this->updated_at,
-            'created_at' => $this->created_at,
         ]);
 
-        $query->orFilterWhere(['like', 'title', $this->text])
-            ->orFilterWhere(['like', 'desc', $this->text])
-            ->orFilterWhere(['like', 'text', $this->text]);
+        $query->andFilterWhere(['like', 'name', $this->name]);
 
         return $dataProvider;
     }

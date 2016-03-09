@@ -15,19 +15,11 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
-
-    <?= $form->field($model, 'title') ?>
-
-    <?= $form->field($model, 'desc') ?>
-
-    <?= $form->field($model, 'text') ?>
-
-    <?php // echo $form->field($model, 'created_at') ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
+    <div class="input-group">
+        <input type="text" value="<?= $model->text ?>" class="form-control" name="ArticleSearch[text]" id="articlesearch-text" title="">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit">Искать!</button>
+        </span>
     </div>
 
     <?php ActiveForm::end(); ?>

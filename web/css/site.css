@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    color: #444;
 }
 
 .wrap {
@@ -93,10 +94,26 @@ a.desc:after {
     margin: 0 0 15px 0;
 }
 
-a.a-green {
+a {
     color: #00ad89;
 }
 
-a.a-green:hover {
+a:hover {
     color: #00c79d;
+}
+
+.color-grey {
+    color: #999;
+}
+
+.color-green {
+    color: #00ad89;
+}
+
+.badge {
+    background-color: #00ad89;
+}
+
+.label-tags {
+    background-color: #00ad89;
 }

@@ -33,7 +33,7 @@
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-                    ['label' => 'Блог', 'url' => ['/site/index']],
+                    ['label' => 'Блог', 'url' => ['/article/index']],
                     ['label' => 'Книги', 'url' => ['/site/books']],
                     ['label' => 'Портфолио', 'url' => ['/site/portfolio']],
                     ['label' => 'Обо мне', 'url' => ['/site/about']],
@@ -52,8 +52,8 @@
 
     <footer class="footer">
         <div class="container">
-            <p><i class="fa fa-envelope"></i> <a class="a-green" href="mailto:sergey@fedosimoff.ru">sergey@fedosimoff.ru</a></p>
-            <p><i class="fa fa-skype"></i> <a class="a-green" href="skype:Urishev?call">Urishev</a></p>
+            <p><i class="fa fa-envelope"></i> <a href="mailto:sergey@fedosimoff.ru">sergey@fedosimoff.ru</a></p>
+            <p><i class="fa fa-skype"></i> <a href="skype:Urishev?call">Urishev</a></p>
         </div>
     </footer>
 

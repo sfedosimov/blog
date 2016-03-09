@@ -4,10 +4,12 @@ namespace app\controllers;
 
 use app\models\ArticleTag;
 use app\models\Tag;
+use app\models\TagSearch;
 use Yii;
 use app\models\Article;
 use app\models\ArticleSearch;
 use yii\base\Exception;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,12 +37,15 @@ class ArticleController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new ArticleSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $smArticle = new ArticleSearch();
+        $dpArticle = $smArticle->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'smArticle' => $smArticle,
+            'dpArticle' => $dpArticle,
+            'dpTag' => new ActiveDataProvider([
+                'query' => Tag::find(),
+            ]),
         ]);
     }
 

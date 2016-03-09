@@ -28,12 +28,12 @@
         {
             return [
                 'timestamp' => [
-                    'class' => TimestampBehavior::className(),
+                    'class'      => TimestampBehavior::className(),
                     'attributes' => [
                         ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
                         ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
                     ],
-                    'value' => new Expression('NOW()'),
+                    'value'      => new Expression('NOW()'),
                 ],
             ];
         }
@@ -83,7 +83,8 @@
             return $this->hasMany(ArticleTag::className(), ['article_id' => 'id']);
         }
 
-        public function getTags() {
+        public function getTags()
+        {
             return $this->hasMany(Tag::className(), ['id' => 'tag_id'])->via('articleTags');
         }
 

@@ -2,6 +2,9 @@
     return [
         'id'         => 'blog',
         'basePath'   => realpath(__DIR__ . '/../'),
+        'defaultRoute' => 'article/index',
+        'language' => 'ru-RU',
+        'sourceLanguage' => 'en-US',
         'bootstrap'  => ['log'],
         'modules'    => [
             'gii' => [
@@ -18,11 +21,12 @@
                 'enablePrettyUrl' => true,
                 'showScriptName'  => false,
                 'suffix'          => '/',
-                'rules'           => [
-                    'blog'      => 'site/index',
-                    'about'     => 'site/about',
-                    'portfolio' => 'site/portfolio',
-                    'books'     => 'site/books',
+                'rules' => [
+                    'blog'             => 'article/index',
+                    'about'            => 'site/about',
+                    'portfolio'        => 'site/portfolio',
+                    'books'            => 'site/books',
+                    'article/<id:\d+>' => 'article/view',
                 ],
             ],
             'log'        => [

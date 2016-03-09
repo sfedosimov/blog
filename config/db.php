@@ -4,5 +4,6 @@
         'dsn'         => 'mysql:host=localhost;dbname=blog',
         'username'    => 'blog',
         'password'    => 'blog',
-        'tablePrefix' => 'blog_'
+        'tablePrefix' => 'blog_',
+        'charset'     => 'utf8',
     ];
