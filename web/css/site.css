@@ -159,3 +159,12 @@ a.tags:hover {
     background-color: #00c79d;
     border-color: #00c79d;
 }
+
+.date_publish {
+    position: relative;
+    margin-top: -10px;
+}
+
+.margin-top-0px {
+    margin-top: 0px;
+}

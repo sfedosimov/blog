@@ -18,6 +18,7 @@
         public $css = [
             'css/site.css',
             'css/navbar.css',
+            'css/paginator.css',
             'css/font-awesome.min.css'
         ];
         public $js = [

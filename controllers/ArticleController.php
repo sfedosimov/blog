@@ -36,15 +36,12 @@ class ArticleController extends Controller
      */
     public function actionIndex()
     {
+        $this->layout = 'blog';
         $smArticle = new ArticleSearch();
         $dpArticle = $smArticle->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'smArticle' => $smArticle,
             'dpArticle' => $dpArticle,
-            'dpTag' => new ActiveDataProvider([
-                'query' => Tag::find(),
-            ]),
         ]);
     }
 
@@ -55,10 +52,12 @@ class ArticleController extends Controller
      */
     public function actionView($id)
     {
+        $this->layout = 'blog';
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $this->findModel($id)
         ]);
-    }
+   }
 
     /**
      * Creates a new Article model.

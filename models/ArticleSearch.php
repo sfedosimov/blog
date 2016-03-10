@@ -32,6 +32,13 @@ class ArticleSearch extends Article
         return Model::scenarios();
     }
 
+    public static function getModelWithLoad() {
+        $model = new static;
+        $model->load(\Yii::$app->request->queryParams);
+
+        return $model;
+    }
+
     /**
      * Creates data provider instance with search query applied
      *
@@ -45,6 +52,7 @@ class ArticleSearch extends Article
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => ['pageSize' => 10],
         ]);
 
         $this->load($params);

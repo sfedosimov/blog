@@ -38,5 +38,11 @@
                 ],
             ],
             'db'         => require(__DIR__ . '/db.php'),
+            'formatter' => [
+                'dateFormat' => 'php:d F Y',
+                'decimalSeparator' => '.',
+                'thousandSeparator' => ' ',
+                'currencyCode' => 'RUB',
+            ],
         ],
     ];

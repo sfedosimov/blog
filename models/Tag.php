@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\data\ActiveDataProvider;
 
 /**
  * This is the model class for table "{{%tag}}".
@@ -54,6 +55,16 @@ class Tag extends \yii\db\ActiveRecord
 
     public function getArticles() {
         return $this->hasMany(Article::className(), ['id' => 'article_id'])->via('articleTags');
+    }
+
+    /**
+     * @return ActiveDataProvider
+     */
+    public static function getADP() {
+        return new ActiveDataProvider([
+            'query' => static::find(),
+            'pagination' => false
+        ]);
     }
 
     /**
