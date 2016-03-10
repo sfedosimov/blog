@@ -7,7 +7,7 @@
     /* @var $searchModel app\models\ArticleSearch */
     /* @var $dataProvider yii\data\ActiveDataProvider */
 
-    $this->title = 'Articles';
+    $this->title = 'Блог';
 ?>
 
 <div class="container-fluid">

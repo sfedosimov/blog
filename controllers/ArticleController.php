@@ -4,7 +4,6 @@ namespace app\controllers;
 
 use app\models\ArticleTag;
 use app\models\Tag;
-use app\models\TagSearch;
 use Yii;
 use app\models\Article;
 use app\models\ArticleSearch;

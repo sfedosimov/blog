@@ -6,6 +6,7 @@
     use yii\behaviors\TimestampBehavior;
     use yii\db\ActiveRecord;
     use yii\db\Expression;
+    use yii\helpers\ArrayHelper;
 
     /**
      * This is the model class for table "{{%article}}".
@@ -86,6 +87,12 @@
         public function getTags()
         {
             return $this->hasMany(Tag::className(), ['id' => 'tag_id'])->via('articleTags');
+        }
+
+        public function listTags() {
+            $res = $this->getTags()->asArray()->all();
+
+            return ArrayHelper::map($res, 'id', 'name') ?: [];
         }
 
         /**

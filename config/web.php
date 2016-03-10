@@ -2,7 +2,6 @@
     return [
         'id'         => 'blog',
         'basePath'   => realpath(__DIR__ . '/../'),
-        'defaultRoute' => 'article/index',
         'language' => 'ru-RU',
         'sourceLanguage' => 'en-US',
         'bootstrap'  => ['log'],

@@ -16,6 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
+        <link rel="icon" href="/favicon.png">
         <?php $this->head() ?>
     </head>
     <body>
@@ -24,7 +25,7 @@
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'Здесь будет лого',
+                'brandLabel' => 'Здесь когда-нибудь будет лого',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-green navbar-small',

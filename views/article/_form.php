@@ -22,7 +22,6 @@
 
     <?= $form->field($model, 'art_tags')->widget(
         Chosen::className(), [
-        //TODO сделать метод в модели
         'items'         => ArrayHelper::map(\app\models\Tag::find()->all(), 'id', 'name'),
         'disableSearch' => 2, // Search input will be disabled while there are fewer than 5 items
         'multiple'      => true,

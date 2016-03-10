@@ -1,7 +1,11 @@
-html,
+html {
+    position: relative;
+    min-height: 100%;
+}
 body {
-    height: 100%;
-    color: #444;
+    /* Margin bottom by footer height */
+    margin-bottom: 80px;
+    color: #666;
 }
 
 .wrap {
@@ -16,7 +20,11 @@ body {
 }
 
 .footer {
-    padding-top: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 15px;
+    height: 80px;
     color: #00ad89;
     border-top: 1px solid #00ad89;
 }
@@ -94,6 +102,18 @@ a.desc:after {
     margin: 0 0 15px 0;
 }
 
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
 a {
     color: #00ad89;
 }
@@ -102,9 +122,19 @@ a:hover {
     color: #00c79d;
 }
 
+a.tags, a.tags:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+a.tags:hover {
+    color: #ffce15;
+}
+
 .color-grey {
     color: #999;
 }
+
 
 .color-green {
     color: #00ad89;
@@ -116,4 +146,16 @@ a:hover {
 
 .label-tags {
     background-color: #00ad89;
+}
+
+.btn-green {
+    color: #fff;
+    background-color: #00ad89;
+    border-color: #00ad89;
+}
+
+.btn-green:hover {
+    color: #fff;
+    background-color: #00c79d;
+    border-color: #00c79d;
 }

@@ -7,6 +7,10 @@ use yii\helpers\Html;
 
 $this->title = $model->title;
 ?>
+<div class="row">
+    <p><?php echo $this->render('_search', ['model' => $smArticle]); ?></p>
+</div>
+
 <div class="article-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -22,12 +26,13 @@ $this->title = $model->title;
         ]) ?>
     </p>
 
-    <p style="font-style: italic;">[<?= Html::encode($model->desc) ?>]</p>
+    <p><em>[<?= Html::encode($model->desc) ?>]</em></p>
 
     <p><?= $model->text ?></p>
 
-    <p><span class="color-grey">Дата публикации:</span> <?= Html::encode($model->created_at) ?></p>
-    <p><span class="color-grey">Теги:</span> <?= '<span class="label label-tags">' . implode('</span> <span class="label label-tags">',
-            $model->getTags()->select('name')->asArray()->column()) . '</span>' ?></p>
+    <hr>
 
+    <p><?= $this->render('_date_publish', ['model' => $model]) ?></p>
+
+    <p><?= $this->render('_tags', ['model' => $model]) ?></p>
 </div>
