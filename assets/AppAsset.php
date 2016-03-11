@@ -19,9 +19,13 @@
             'css/site.css',
             'css/navbar.css',
             'css/paginator.css',
-            'css/font-awesome.min.css'
+            'css/font-awesome.min.css',
+            'css/tomorrow.css'
         ];
         public $js = [
+            'js/highlight.pack.js',
+            'js/html5.js'   => 'lt IE 9',
+            'js/respond.js' => 'lt IE 9',
         ];
         public $depends = [
             'yii\web\YiiAsset',

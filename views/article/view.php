@@ -23,7 +23,9 @@
         ]) ?>
     </p>
 
-    <p><em>[<?= Html::encode($model->desc) ?>]</em></p>
+    <p><em><?= $model->desc ?></em></p>
+
+    <hr>
 
     <p><?= $model->text ?></p>
 

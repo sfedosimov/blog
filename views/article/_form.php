@@ -2,12 +2,16 @@
 
     use yii\helpers\ArrayHelper;
     use yii\helpers\Html;
+    use yii\web\View;
     use yii\widgets\ActiveForm;
     use skeeks\widget\chosen\Chosen;
+    use dosamigos\ckeditor\CKEditor;
 
     /* @var $this yii\web\View */
     /* @var $model app\models\Article */
     /* @var $form yii\widgets\ActiveForm */
+
+    $this->registerJs("hljs.initHighlightingOnLoad();", View::POS_END, 'init-highlight');
 ?>
 
 <div class="article-form">
@@ -16,9 +20,16 @@
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'desc')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'desc')->widget(CKEditor::className(), [
+        'options' => ['rows' => 6],
+        'preset' => 'standart',
+    ]) ?>
 
-    <?= $form->field($model, 'text')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'text')->widget(CKEditor::className(), [
+        'options' => ['rows' => 6],
+        'preset' => 'full',
+        'clientOptions' => ['extraPlugins' => 'codesnippet']
+    ]) ?>
 
     <?= $form->field($model, 'art_tags')->widget(
         Chosen::className(), [

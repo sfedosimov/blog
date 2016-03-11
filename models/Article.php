@@ -67,10 +67,10 @@
         {
             return [
                 'id'         => 'ID',
-                'title'      => 'Title',
-                'desc'       => 'Desc',
-                'text'       => 'Text',
-                'art_tags'   => 'Art Tags',
+                'title'      => 'Название',
+                'desc'       => 'Анонс',
+                'text'       => 'Подробное описание',
+                'art_tags'   => 'Теги',
                 'updated_at' => 'Updated At',
                 'created_at' => 'Created At',
             ];

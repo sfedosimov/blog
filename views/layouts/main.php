@@ -18,10 +18,6 @@
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <link rel="icon" href="/favicon.png">
-        <!--[if lt IE 9]>
-            <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-            <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-        <![endif]-->
         <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700&subset=latin,cyrillic" rel="stylesheet" type="text/css">
         <?php $this->head() ?>
     </head>

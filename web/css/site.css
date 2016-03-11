@@ -182,3 +182,8 @@ a.tags:hover {
     list-style-type: circle;
     padding-left: 20px;
 }
+
+pre {
+    border: none;
+    border-radius: 0;
+}
