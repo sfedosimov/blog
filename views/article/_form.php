@@ -2,7 +2,6 @@
 
     use yii\helpers\ArrayHelper;
     use yii\helpers\Html;
-    use yii\web\View;
     use yii\widgets\ActiveForm;
     use skeeks\widget\chosen\Chosen;
     use dosamigos\ckeditor\CKEditor;
@@ -10,8 +9,6 @@
     /* @var $this yii\web\View */
     /* @var $model app\models\Article */
     /* @var $form yii\widgets\ActiveForm */
-
-    $this->registerJs("hljs.initHighlightingOnLoad();", View::POS_END, 'init-highlight');
 ?>
 
 <div class="article-form">

@@ -3,18 +3,12 @@
     "yiisoft/yii2": "*",
     "yiisoft/yii2-gii": "*",
     "skeeks/yii2-widget-chosen": "*",
-    "sfedosimov/yii2-ckeditor-widget": "dev-master"
+    "2amigos/yii2-ckeditor-widget": "dev-master"
   },
   "extra": {
     "asset-installer-paths": {
       "npm-asset-library": "vendor/npm",
       "bower-asset-library": "vendor/bower"
     }
-  },
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/sfedosimov/yii2-ckeditor-widget.git"
-    }
-  ]
+  }
 }

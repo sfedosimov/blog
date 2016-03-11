@@ -3,6 +3,7 @@
     /* @var $content string */
     use yii\bootstrap\Html;
 
+    $this->registerJs("hljs.initHighlightingOnLoad();", \yii\web\View::POS_END, 'init-highlight');
 ?>
 
 <?php $this->beginContent('@app/views/layouts/main.php'); ?>

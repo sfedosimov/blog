@@ -24,8 +24,8 @@
         ];
         public $js = [
             'js/highlight.pack.js',
-            'js/html5.js'   => 'lt IE 9',
-            'js/respond.js' => 'lt IE 9',
+            'js/html5.js', // TODO: only lt ie9
+            'js/respond.js', // TODO: only lt ie9
         ];
         public $depends = [
             'yii\web\YiiAsset',
