@@ -120,6 +120,7 @@ h3 {
 
 h1, h2, h3 {
     font-weight: bold;
+    color: #00ad89;
 }
 
 a {
@@ -175,4 +176,9 @@ a.tags:hover {
 
 .margin-top-0px {
     margin-top: 0px;
+}
+
+.menu-tags {
+    list-style-type: circle;
+    padding-left: 20px;
 }

@@ -16,18 +16,17 @@
                 echo $this->render('/article/_search', ['model' => $m]);
             ?>
             <h4 class="color-green">Теги:</h4>
-            <ul style="list-style-type: circle; padding-left: 30px;">
-                <?= yii\widgets\ListView::widget([
-                    'dataProvider' => \app\models\Tag::getADP(),
-                    'summary'      => false,
-                    'itemOptions'  => ['class' => 'item'],
-                    'itemView'     => function ($model, $key, $index, $widget) {
-                        $count = \app\models\ArticleTag::find()->where(['tag_id' => $model->id])->count();
-                        return '<li>' . Html::a(Html::encode($model->name) . ' <span class="badge">' . $count,
-                            ['index', 'ArticleSearch[art_tags][]' => $model->id]) . '</li>';
-                    },
-                ]) ?>
-            </ul>
+            <?= yii\widgets\ListView::widget([
+                'dataProvider' => \app\models\Tag::getADP(),
+                'layout' => '<ul class="menu-tags">{items}</ul>',
+                'summary'      => false,
+                'itemOptions'  => ['tag' => 'li',],
+                'itemView'     => function ($model, $key, $index, $widget) {
+                    $count = \app\models\ArticleTag::find()->where(['tag_id' => $model->id])->count();
+                    return Html::a(Html::encode($model->name),
+                        ['index', 'ArticleSearch[art_tags][]' => $model->id]) . ' <span class="color-grey">(' . $count . ')</span>';
+                },
+            ]) ?>
         </div>
 </div>
 
