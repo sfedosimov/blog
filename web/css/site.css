@@ -4,15 +4,18 @@ html {
 }
 body {
     /* Margin bottom by footer height */
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
     margin-bottom: 80px;
     color: #666;
+    line-height: 1.625;
 }
 
 .wrap {
     min-height: 100%;
     height: auto;
-    margin: 0 auto -60px;
-    padding: 0 0 60px;
+    margin: 0 auto;
+    padding: 0 0 80px;
 }
 
 .wrap > .container {
@@ -23,7 +26,6 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding-top: 15px;
     height: 80px;
     color: #00ad89;
     border-top: 1px solid #00ad89;
@@ -31,6 +33,8 @@ body {
 
 .footer .container {
     text-align: center;
+    position: relative;
+    top: 15px;
 }
 
 .jumbotron {
@@ -103,15 +107,19 @@ a.desc:after {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 1.5em;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 1.25em;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 1.1em;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
 }
 
 a {

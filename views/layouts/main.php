@@ -13,10 +13,12 @@
     <html lang="<?= Yii::$app->language ?>">
     <head>
         <meta charset="<?= Yii::$app->charset ?>">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <link rel="icon" href="/favicon.png">
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700&subset=latin,cyrillic" rel="stylesheet" type="text/css">
         <?php $this->head() ?>
     </head>
     <body>
@@ -53,8 +55,9 @@
 
     <footer class="footer">
         <div class="container">
-            <p><i class="fa fa-envelope"></i> <a href="mailto:sergey@fedosimoff.ru">sergey@fedosimoff.ru</a></p>
-            <p><i class="fa fa-skype"></i> <a href="skype:Urishev?call">Urishev</a></p>
+            <span><i class="fa fa-envelope"></i> <a href="mailto:sergey@fedosimoff.ru">sergey@fedosimoff.ru</a></span>
+            <br>
+            <span><i class="fa fa-skype"></i> <a href="skype:Urishev?call">Urishev</a></span>
         </div>
     </footer>
 

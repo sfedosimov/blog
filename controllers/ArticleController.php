@@ -3,12 +3,10 @@
 namespace app\controllers;
 
 use app\models\ArticleTag;
-use app\models\Tag;
 use Yii;
 use app\models\Article;
 use app\models\ArticleSearch;
 use yii\base\Exception;
-use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
