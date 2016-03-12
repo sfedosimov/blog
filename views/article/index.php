@@ -12,6 +12,7 @@
 <div class="article-list">
     <p>
         <?= Html::a('Добавить статью', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить тег', ['/tag'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= ListView::widget([
         'dataProvider' => $dpArticle,

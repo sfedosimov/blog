@@ -7,6 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Article */
 
 $this->title = 'Новая статья';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="article-create">
 

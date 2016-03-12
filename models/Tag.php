@@ -41,7 +41,7 @@ class Tag extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
+            'name' => 'Имя',
         ];
     }
 
@@ -65,14 +65,5 @@ class Tag extends \yii\db\ActiveRecord
             'query' => static::find(),
             'pagination' => false
         ]);
-    }
-
-    /**
-     * @inheritdoc
-     * @return TagQuery the active query used by this AR class.
-     */
-    public static function find()
-    {
-        return new TagQuery(get_called_class());
     }
 }
