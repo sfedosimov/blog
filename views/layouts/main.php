@@ -33,14 +33,31 @@
                     'class' => 'navbar-green navbar-small',
                 ],
             ]);
+
+            $items = [
+                ['label' => 'Блог', 'url' => ['/article/index']],
+                ['label' => 'Книги', 'url' => ['/site/books']],
+                ['label' => 'Портфолио', 'url' => ['/site/portfolio']],
+                ['label' => 'Обо мне', 'url' => ['/site/about']],
+            ];
+
+
+            if (!Yii::$app->user->isGuest) {
+                $items[] = (
+                    '<li>'
+                    . Html::beginForm(['/site/logout'], 'post')
+                    . Html::submitButton(
+                        'Выйти (' . Yii::$app->user->identity->username . ')',
+                        ['class' => 'btn btn-link logout-link']
+                    )
+                    . Html::endForm()
+                    . '</li>'
+                );
+            }
+
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                    ['label' => 'Блог', 'url' => ['/article/index']],
-                    ['label' => 'Книги', 'url' => ['/site/books']],
-                    ['label' => 'Портфолио', 'url' => ['/site/portfolio']],
-                    ['label' => 'Обо мне', 'url' => ['/site/about']],
-                ],
+                'items' => $items,
             ]);
             NavBar::end();
         ?>

@@ -12,6 +12,7 @@
 <div class="article-view">
     <h1 class="margin-top-0px"><?= Html::encode($this->title) ?></h1>
     <p class="date_publish color-grey"><?= Yii::$app->formatter->asDate($model->created_at) ?></p>
+    <?php if (!Yii::$app->user->isGuest): ?>
     <p>
         <?= Html::a('Редактировать', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
@@ -22,6 +23,7 @@
             ],
         ]) ?>
     </p>
+    <?php endif ?>
 
     <p><em><?= $model->desc ?></em></p>
 

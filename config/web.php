@@ -21,6 +21,7 @@
                 'showScriptName'  => false,
                 'suffix'          => '/',
                 'rules' => [
+                    'login'            => 'site/login',
                     'blog/<tag:\w+>'   => 'article/index',
                     'blog'             => 'article/index',
                     'about'            => 'site/about',
@@ -28,6 +29,10 @@
                     'books'            => 'site/books',
                     'article/<id:\d+>' => 'article/view',
                 ],
+            ],
+            'user' => [
+                'identityClass' => 'app\models\User',
+                'enableAutoLogin' => true,
             ],
             'log'        => [
                 'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -46,4 +51,7 @@
                 'currencyCode' => 'RUB',
             ],
         ],
+        'params' => [
+            'users' => require(__DIR__ . '/users.php'),
+        ]
     ];

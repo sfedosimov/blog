@@ -187,3 +187,15 @@ pre {
     border: none;
     border-radius: 0;
 }
+
+.logout-link {
+    color: #ecf0f1;
+    position: relative;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.logout-link:hover {
+    color: #d1ffed;
+    text-decoration: none;
+}
