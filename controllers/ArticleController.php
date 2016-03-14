@@ -122,7 +122,6 @@ class ArticleController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            //TODO сделать метод в модели
             $model->art_tags = $model->getTags()->select('id')->asArray()->column();
             return $this->render('update', [
                 'model' => $model,

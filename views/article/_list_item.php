@@ -3,9 +3,14 @@
 ?>
     <h2 class="margin-top-0px"><?= Html::a(Html::encode($model->title), ['view', 'id' => $model->id, 'key' => $model->key]); ?></h2>
 
-    <p class="date_publish color-grey"><?= Yii::$app->formatter->asDate($model->created_at) ?></p>
+    <div class="date_publish color-grey"><?= Yii::$app->formatter->asDate($model->created_at) ?></div>
 
-    <?php //TODO Прижать сылку к концу текста  ?>
-    <p><?= $model->desc ?> <?= Html::a('Читать полностью &raquo;', ['view', 'id' => $model->id, 'key' => $model->key]); ?></p>
+    <div>
+        <?= $model->desc ?>
+    </div>
 
-    <p><?= $this->render('_tags', ['model' => $model]) ?></p>
+    <div style="margin-bottom: 10px;">
+        <?= Html::a('Читать полностью &raquo;', ['view', 'id' => $model->id, 'key' => $model->key], ['class' => 'btn btn-green btn-sm']); ?>
+    </div>
+
+    <div><?= $this->render('_tags', ['model' => $model]) ?></div>

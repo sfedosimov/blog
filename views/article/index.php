@@ -19,7 +19,7 @@
     <?= ListView::widget([
         'dataProvider' => $dpArticle,
         'summary'      => false,
-        'itemOptions'  => ['class' => 'item'],
+        'itemOptions'  => ['class' => 'item item-article'],
         'itemView'     => '_list_item',
     ]) ?>
 </div>
