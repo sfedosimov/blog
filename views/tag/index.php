@@ -18,9 +18,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= \yii\grid\GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-            [
-                'attribute'=>'name',
-            ],
+            'name',
+            'key',
             [
                 'class' => 'yii\grid\ActionColumn',
                 'header'=>'Действия',
