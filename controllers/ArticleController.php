@@ -73,7 +73,7 @@ class ArticleController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id)
+    public function actionView($id, $key)
     {
         $this->layout = 'blog';
 
