@@ -31,24 +31,22 @@ class ArticleController extends Controller
     /**
      * Lists all Article models.
      *
-     * @param null $search_type
-     * @param null $str
+     * @param null $tag
      *
      * @return mixed
+     *
      */
-    public function actionIndex($search_type = null, $str = null)
+    public function actionIndex($tag = null)
     {
         $this->layout = 'blog';
         $request = ['ArticleSearch'];
 
-        switch($search_type) {
-            case 'tag':
-                $request['ArticleSearch']['art_tags'][] = $str;
-                break;
-            case 'search':
-                $request['ArticleSearch']['text'] = Yii::$app->request->get('q');
-                break;
+        if (is_null($tag) && $q = Yii::$app->request->get('q')) {
+            $request['ArticleSearch']['text'] = $q;
+        } else if($tag) {
+            $request['ArticleSearch']['art_tags'][] = $tag;
         }
+
 
         $smArticle = new ArticleSearch();
         $dpArticle = $smArticle->search($request);
