@@ -25,7 +25,7 @@
                 'itemView'     => function ($model, $key, $index, $widget) {
                     $count = \app\models\ArticleTag::find()->where(['tag_id' => $model->id])->count();
                     return Html::a(Html::encode($model->name),
-                        ['index', 'ArticleSearch[art_tags][]' => $model->id]) . ' <span class="color-grey">(' . $count . ')</span>';
+                        ['index', 'search_type' => 'tag', 'str' => $model->key]) . ' <span class="color-grey">(' . $count . ')</span>';
                 },
             ]) ?>
         </div>

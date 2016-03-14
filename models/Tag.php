@@ -9,6 +9,7 @@ use yii\data\ActiveDataProvider;
  * This is the model class for table "{{%tag}}".
  *
  * @property integer $id
+ * @property string $key
  * @property string $name
  *
  * @property ArticleTag[] $articleTags
@@ -29,8 +30,8 @@ class Tag extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'required'],
-            [['name'], 'string', 'max' => 255]
+            [['name', 'key'], 'required'],
+            [['name', 'key'], 'string', 'max' => 255]
         ];
     }
 
@@ -40,7 +41,8 @@ class Tag extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
+            'id'   => 'ID',
+            'key'   => 'URL Ключ',
             'name' => 'Имя',
         ];
     }

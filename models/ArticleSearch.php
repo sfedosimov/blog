@@ -68,7 +68,7 @@ class ArticleSearch extends Article
         if (is_array($this->art_tags)) {
             $query->joinWith('tags');
             foreach($this->art_tags as $tkey => $tval)
-                $query->orFilterWhere(['=', '{{%tag}}.id', $tval]);
+                $query->orFilterWhere(['=', '{{%tag}}.key', $tval]);
         }
 
         $query->andFilterWhere([

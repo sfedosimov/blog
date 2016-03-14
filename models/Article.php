@@ -12,6 +12,7 @@
      * This is the model class for table "{{%article}}".
      *
      * @property integer      $id
+     * @property string       $key
      * @property string       $title
      * @property string       $desc
      * @property string       $text
@@ -53,10 +54,10 @@
         public function rules()
         {
             return [
-                [['title', 'text', 'desc', 'art_tags'], 'required'],
+                [['key', 'title', 'text', 'desc', 'art_tags'], 'required'],
                 [['text', 'desc'], 'string'],
                 [['updated_at', 'created_at', 'art_tags'], 'safe'],
-                [['title'], 'string', 'max' => 255],
+                [['key', 'title'], 'string', 'max' => 255],
             ];
         }
 
@@ -67,6 +68,7 @@
         {
             return [
                 'id'         => 'ID',
+                'key'        => 'URL Ключ',
                 'title'      => 'Название',
                 'desc'       => 'Анонс',
                 'text'       => 'Подробное описание',
@@ -92,7 +94,7 @@
         public function listTags() {
             $res = $this->getTags()->asArray()->all();
 
-            return ArrayHelper::map($res, 'id', 'name') ?: [];
+            return ArrayHelper::map($res, 'key', 'name') ?: [];
         }
 
         /**

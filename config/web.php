@@ -21,6 +21,7 @@
                 'showScriptName'  => false,
                 'suffix'          => '/',
                 'rules' => [
+                    'blog/<search_type:\w+>/<str:\w+>'   => 'article/index',
                     'blog'             => 'article/index',
                     'about'            => 'site/about',
                     'portfolio'        => 'site/portfolio',

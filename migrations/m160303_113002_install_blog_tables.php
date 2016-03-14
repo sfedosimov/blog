@@ -8,6 +8,7 @@
         {
             $this->createTable('{{%article}}', [
                 'id'         => $this->primaryKey(),
+                'key'        => $this->string()->unique()->notNull(),
                 'title'      => $this->string()->notNull(),
                 'desc'       => $this->text(),
                 'text'       => $this->text(),
@@ -17,6 +18,7 @@
 
             $this->createTable('{{%tag}}', [
                 'id'   => $this->primaryKey(),
+                'key'  => $this->string()->unique()->notNull(),
                 'name' => $this->string()->notNull(),
             ]);
 
@@ -26,8 +28,10 @@
                 'tag_id'     => $this->integer()->notNull(),
             ]);
 
-            $this->addForeignKey('article_to_tag', '{{%article_tag}}', 'article_id', '{{%article}}', 'id', 'CASCADE', 'CASCADE');
-            $this->addForeignKey('tag_to_article', '{{%article_tag}}', 'tag_id', '{{%tag}}', 'id', 'CASCADE', 'CASCADE');
+            $this->addForeignKey('article_to_tag', '{{%article_tag}}', 'article_id', '{{%article}}', 'id', 'CASCADE',
+                'CASCADE');
+            $this->addForeignKey('tag_to_article', '{{%article_tag}}', 'tag_id', '{{%tag}}', 'id', 'CASCADE',
+                'CASCADE');
         }
 
         public function down()
