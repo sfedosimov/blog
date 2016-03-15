@@ -203,3 +203,7 @@ pre {
 .item-article {
     margin-bottom: 1.625em;
 }
+
+.article-view img {
+    max-width: 100%;
+}
