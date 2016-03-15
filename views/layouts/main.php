@@ -39,6 +39,7 @@
                 ['label' => 'Книги', 'url' => ['/site/books']],
                 ['label' => 'Портфолио', 'url' => ['/site/portfolio']],
                 ['label' => 'Обо мне', 'url' => ['/site/about']],
+                ['label' => 'Загрузки', 'url' => ['/upload/index']],
             ];
 
 

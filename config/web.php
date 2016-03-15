@@ -28,6 +28,7 @@
                     'about'                   => 'site/about',
                     'portfolio'               => 'site/portfolio',
                     'books'                   => 'site/books',
+                    'upload'                   => 'upload/index',
                     'article/<id:\d+>'        => 'article/view',
                 ],
             ],

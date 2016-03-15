@@ -3,7 +3,8 @@
     "yiisoft/yii2": "*",
     "yiisoft/yii2-gii": "*",
     "skeeks/yii2-widget-chosen": "*",
-    "2amigos/yii2-ckeditor-widget": "dev-master"
+    "2amigos/yii2-ckeditor-widget": "dev-master",
+    "2amigos/yii2-file-upload-widget": "~1.0"
   },
   "extra": {
     "asset-installer-paths": {
