@@ -1,6 +1,8 @@
 <?php
     use dosamigos\fileupload\FileUploadUI;
     use yii\bootstrap\Html;
+    use yii\data\ArrayDataProvider;
+    use yii\grid\GridView;
     use yii\helpers\FileHelper;
     use yii\helpers\Url;
 
@@ -28,6 +30,48 @@
     ],
 ]); ?>
 
+<?php
+    $files = FileHelper::findFiles(Yii::getAlias('@app/web/uploads/ajax/'));
+    foreach ($files as $file) {
+        $dp[] = [
+            'file' => $file,
+            'webPath' => str_replace(Yii::getAlias('@webroot'), Yii::getAlias('@web'), $file),
+        ];
+    }
+
+    $dp = new ArrayDataProvider([
+        'allModels' => $dp,
+    ]);
+
+?>
+
+
+<?= GridView::widget([
+    'dataProvider' => $dp,
+    'columns'      => [
+        [
+            'label' => 'Превью',
+            'value' => function ($model) {
+                return Html::img($model['webPath'], ['alt' => Html::encode(basename($model['file'])), 'width' => 200]);
+            }
+        ],
+        [
+            'label' => 'Ссылка',
+            'value' => function ($model) {
+                return $model['webPath'];
+            }
+        ],
+        [
+            'label' => 'Удалить',
+            'value' => function ($model) {
+                return Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']),
+                'javascript:void(0);',
+                ['class' => 'post-click', 'data-file' => basename($model['file'])]);
+            }
+        ],
+    ],
+]); ?>
+
 
 <?php
     $files = FileHelper::findFiles(Yii::getAlias('@app/web/uploads/ajax/'));
@@ -43,12 +87,12 @@
             <tbody>
 
             <?php
-                foreach ($files as $file): ?>
-                    <?php $web_path = str_replace(Yii::getAlias('@webroot'), Yii::getAlias('@web'), $file); ?>
+                foreach ($files as $file): ?><?php $web_path = str_replace(Yii::getAlias('@webroot'),
+                    Yii::getAlias('@web'), $file); ?>
                     <tr>
                         <td><?= Html::img($web_path,
                                 ['alt' => Html::encode(basename($file)), 'width' => 200]); ?></td>
-                        <td><?= Html::encode($web_path)?></td>
+                        <td><?= Html::encode($web_path) ?></td>
                         <td><?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']),
                                 'javascript:void(0);',
                                 ['class' => 'post-click', 'data-file' => basename($file)]) ?></td>

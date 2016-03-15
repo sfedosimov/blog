@@ -1,7 +1,7 @@
 <?php
     namespace app\controllers;
 
-    use app\models\UploadForm;
+    use app\models\Upload;
     use yii\filters\AccessControl;
     use Yii;
     use yii\helpers\ArrayHelper;
@@ -45,15 +45,14 @@
 
         public function actionIndex()
         {
-            $model = new UploadForm();
+            $model = new Upload();
 
             return $this->render('index', ['model' => $model]);
         }
 
         public function actionImageUpload()
         {
-            $imageFile = UploadedFile::getInstanceByName('UploadForm[imageFile]');
-            // TODO: сделать thumbnailUrl (https://packagist.org/packages/imagine/imagine)
+            $imageFile = UploadedFile::getInstanceByName('Upload[imageFile]');
             if ($imageFile) {
                 $filePath = $this->directory . $imageFile->name;
                 $webPath = $this->web_directory . $imageFile->name;
@@ -64,7 +63,7 @@
                                 'name'         => $imageFile->name,
                                 'size'         => $imageFile->size,
                                 "url"          => $webPath,
-                                "thumbnailUrl" => $webPath,
+                                //"thumbnailUrl" => $webPath,
                                 "deleteUrl"    => Url::to(['upload/image-delete', 'name' => $imageFile->name]),
                                 "deleteType"   => "POST"
                             ]
@@ -88,7 +87,7 @@
                     'name'         => basename($file),
                     'size'         => filesize($file),
                     "url"          => $path,
-                    "thumbnailUrl" => $path,
+                    //"thumbnailUrl" => $path,
                     "deleteUrl"    => Url::to(['upload/image-delete', 'name' => basename($file)]),
                     "deleteType"   => "POST"
                 ];

@@ -4,7 +4,7 @@
     use yii\base\Model;
     use yii\web\UploadedFile;
 
-    class UploadForm extends Model
+    class Upload extends Model
     {
         /**
          * @var UploadedFile
