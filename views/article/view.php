@@ -27,8 +27,6 @@
     <div class="article-body">
         <p><em><?= $model->desc ?></em></p>
 
-        <hr>
-
         <?= $model->text ?>
     </div>
     <hr>

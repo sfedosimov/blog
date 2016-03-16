@@ -33,14 +33,9 @@ a.tags:hover {
 
 .article-list, .article-view {
     margin-right: 1.625em;
-    text-align: justify;
 }
 
 .column-left, .column-right {
     padding-right: 0;
     padding-left: 0;
-}
-
-.article-view em {
-    font-style: italic;
 }

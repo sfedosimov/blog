@@ -16,7 +16,7 @@
             $m = \app\models\ArticleSearch::getModelWithLoad();
             echo $this->render('/article/_search', ['model' => $m]);
         ?>
-        <h4 class="color-green">Теги:</h4>
+        <h3>Теги:</h3>
         <?= yii\widgets\ListView::widget([
             'dataProvider' => \app\models\Tag::getADP(),
             'layout' => '<ul class="menu-tags">{items}</ul>',

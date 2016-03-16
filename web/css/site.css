@@ -22,6 +22,13 @@ time, mark, audio, video, hr {
 }
 /* ------------------------------------------------------------ */
 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    box-sizing: border-box;
+    display: block;
+}
+
 html {
     position: relative;
     min-height: 100%;
@@ -33,6 +40,103 @@ body {
     margin-bottom: 80px;
     color: #444;
     line-height: 1.625em;
+}
+
+h1, h2, h3,
+h1 a, h2 a, h3 a {
+    color: #00ad89;
+}
+
+h4 {
+    color: #000;
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+h3, h4 {
+    font-weight: bold;
+    font-size: 1.0em;
+}
+
+a {
+    color: #00ad89;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #00c79d;
+}
+
+a.revert {
+    text-decoration: underline;
+}
+
+a.revert:hover {
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style-position: outside;
+    margin-left: 1.625em;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+p, pre, ul, ol {
+    margin-bottom: 1.625em;
+}
+
+p, li {
+    text-align: justify;
+}
+
+pre {
+    border-left: #f1f1f1 solid 10px;
+    padding-left: 1em;
+    background: none;
+}
+
+code {
+    background: #f1f1f1;
+    color: #000;
+    font-family: monospace, sans-serif;
+    font-size: .875em;
+    padding: 1px 3px;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+em, i {
+    font-style: italic;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #eee;
 }
 
 .wrap {
@@ -69,44 +173,8 @@ body {
     margin: 0 0 15px 0;
 }
 
-h1 {
-    font-size: 1.5em;
-}
-
-h2 {
-    font-size: 1.25em;
-}
-
-h3 {
-    font-size: 1.1em;
-}
-
-h1, h2, h3 {
-    font-weight: bold;
-    color: #00ad89;
-}
-
-a {
-    color: #00ad89;
-}
-
-a:hover {
-    color: #00c79d;
-}
-
-hr {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 0;
-    border-top: 1px solid #eee;
-}
-
 .color-grey {
     color: #999;
-}
-
-.color-green {
-    color: #00ad89;
 }
 
 .btn-green {
@@ -131,4 +199,8 @@ hr {
 .logout-link:hover {
     color: #d1ffed;
     text-decoration: none;
+}
+
+.general-font {
+    font-family: 'PT Sans', sans-serif;
 }
