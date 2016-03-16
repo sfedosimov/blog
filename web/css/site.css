@@ -1,3 +1,27 @@
+/* Reset -------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, hr {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* ------------------------------------------------------------ */
+
 html {
     position: relative;
     min-height: 100%;
@@ -7,7 +31,7 @@ body {
     font-family: 'PT Sans', sans-serif;
     font-size: 16px;
     margin-bottom: 80px;
-    color: #666;
+    color: #444;
     line-height: 1.625em;
 }
 
@@ -35,67 +59,6 @@ body {
     text-align: center;
     position: relative;
     top: 15px;
-}
-
-.jumbotron {
-    text-align: center;
-    background-color: transparent;
-}
-
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
-
-.not-set {
-    color: #c55;
-    font-style: italic;
-}
-
-/* add sorting icons to gridview sort links */
-a.asc:after, a.desc:after {
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    padding-left: 5px;
-}
-
-a.asc:after {
-    content: /*"\e113"*/ "\e151";
-}
-
-a.desc:after {
-    content: /*"\e114"*/ "\e152";
-}
-
-.sort-numerical a.asc:after {
-    content: "\e153";
-}
-
-.sort-numerical a.desc:after {
-    content: "\e154";
-}
-
-.sort-ordinal a.asc:after {
-    content: "\e155";
-}
-
-.sort-ordinal a.desc:after {
-    content: "\e156";
-}
-
-.grid-view th {
-    white-space: nowrap;
-}
-
-.hint-block {
-    display: block;
-    margin-top: 5px;
-    color: #999;
 }
 
 .error-summary {
@@ -131,30 +94,19 @@ a:hover {
     color: #00c79d;
 }
 
-a.tags, a.tags:hover {
-    text-decoration: none;
-    color: #fff;
-}
-
-a.tags:hover {
-    color: #ffce15;
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #eee;
 }
 
 .color-grey {
     color: #999;
 }
 
-
 .color-green {
     color: #00ad89;
-}
-
-.badge {
-    background-color: #00ad89;
-}
-
-.label-tags {
-    background-color: #00ad89;
 }
 
 .btn-green {
@@ -164,28 +116,9 @@ a.tags:hover {
 }
 
 .btn-green:hover {
-    color: #00c79d;
-    background-color: #fff;
-    border-color: #00c79d;
-}
-
-.date_publish {
-    position: relative;
-    margin-top: -10px;
-}
-
-.margin-top-0px {
-    margin-top: 0px;
-}
-
-.menu-tags {
-    list-style-type: circle;
-    padding-left: 20px;
-}
-
-pre {
-    border: none;
-    border-radius: 0;
+    color: #00C79D;
+    background-color: #FFFFFF;
+    border-color: #00C79D;
 }
 
 .logout-link {
@@ -198,14 +131,4 @@ pre {
 .logout-link:hover {
     color: #d1ffed;
     text-decoration: none;
-}
-
-.item-article {
-    margin-bottom: 1.625em;
-}
-
-.article-view img {
-    max-width: 100%;
-    border-radius: 6px;
-    border: 3px solid #f5f5f5;
 }

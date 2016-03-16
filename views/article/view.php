@@ -11,7 +11,7 @@
 
 <div class="article-view">
     <h1 class="margin-top-0px"><?= Html::encode($this->title) ?></h1>
-    <p class="date_publish color-grey"><?= Yii::$app->formatter->asDate($model->created_at) ?></p>
+    <p class="date-publish color-grey"><?= Yii::$app->formatter->asDate($model->created_at) ?></p>
     <?php if (!Yii::$app->user->isGuest): ?>
     <p>
         <?= Html::a('Редактировать', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
@@ -24,14 +24,15 @@
         ]) ?>
     </p>
     <?php endif ?>
+    <div class="article-body">
+        <p><em><?= $model->desc ?></em></p>
 
-    <p><em><?= $model->desc ?></em></p>
+        <hr>
 
+        <?= $model->text ?>
+    </div>
     <hr>
-
-    <p><?= $model->text ?></p>
-
-    <hr>
-
-    <p><?= $this->render('_tags', ['model' => $model]) ?></p>
+    <div class="meta">
+        <?= $this->render('_tags', ['model' => $model]) ?>
+    </div>
 </div>
