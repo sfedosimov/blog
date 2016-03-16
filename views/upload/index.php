@@ -1,12 +1,10 @@
 <?php
     use dosamigos\fileupload\FileUploadUI;
-    use yii\bootstrap\Html;
-    use yii\data\ArrayDataProvider;
     use yii\grid\GridView;
-    use yii\helpers\FileHelper;
     use yii\helpers\Url;
 
     /* @var $this yii\web\View */
+    /* @var $model app\models\Upload */
     $this->title = 'Загрузка';
     $this->registerJs('
         $(".post-click").on("click", function() {
@@ -16,90 +14,46 @@
         });
     ', \yii\web\View::POS_READY);
 ?>
-
-<?= FileUploadUI::widget([
-    'model'         => $model,
-    'attribute'     => 'imageFile',
-    'url'           => ['upload/image-upload'], // your url, this is just for demo purposes,
-    'gallery'       => false,
-    'fieldOptions'  => [
-        'accept' => 'image/*'
-    ],
-    'clientOptions' => [
-        'maxFileSize' => 2000000
-    ],
-]); ?>
-
-<?php
-    $files = FileHelper::findFiles(Yii::getAlias('@app/web/uploads/ajax/'));
-    foreach ($files as $file) {
-        $dp[] = [
-            'file' => $file,
-            'webPath' => str_replace(Yii::getAlias('@webroot'), Yii::getAlias('@web'), $file),
-        ];
-    }
-
-    $dp = new ArrayDataProvider([
-        'allModels' => $dp,
-    ]);
-
-?>
-
-
-<?= GridView::widget([
-    'dataProvider' => $dp,
-    'columns'      => [
-        [
-            'label' => 'Превью',
-            'value' => function ($model) {
-                return Html::img($model['webPath'], ['alt' => Html::encode(basename($model['file'])), 'width' => 200]);
-            }
+<div class="upload-list">
+    <?= FileUploadUI::widget([
+        'model'         => $model,
+        'attribute'     => 'imageFile',
+        'url'           => ['upload/image-upload'], // your url, this is just for demo purposes,
+        'gallery'       => false,
+        'fieldOptions'  => [
+            'accept' => 'image/*'
         ],
-        [
-            'label' => 'Ссылка',
-            'value' => function ($model) {
-                return $model['webPath'];
-            }
+        'clientOptions' => [
+            'maxFileSize' => 2000000
         ],
-        [
-            'label' => 'Удалить',
-            'value' => function ($model) {
-                return Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']),
-                'javascript:void(0);',
-                ['class' => 'post-click', 'data-file' => basename($model['file'])]);
-            }
+    ]); ?>
+
+    <h2>Загруженные файлы</h2>
+    <?= GridView::widget([
+        'dataProvider' => $model->getFilesDP(),
+        'columns'      => [
+            [
+                'label'          => 'Превью',
+                'attribute'      => 'preview',
+                'format'         => 'html',
+                'contentOptions' => ['style' => 'width: 10%;']
+            ],
+            [
+                'label'     => 'Ссылка',
+                'attribute' => 'url',
+                'format'    => 'text'
+            ],
+            [
+                'label'     => 'Дата',
+                'attribute' => 'date_c',
+                'format'    => ['date', 'php:d F Y']
+            ],
+            [
+                'label'     => 'Действие',
+                'attribute' => 'delete',
+                'format'    => 'raw',
+                'contentOptions' => ['style' => 'width: 5%;']
+            ],
         ],
-    ],
-]); ?>
-
-
-<?php
-    $files = FileHelper::findFiles(Yii::getAlias('@app/web/uploads/ajax/'));
-    if ($files): ?>
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th>Превью</th>
-                <th>Ссылка</th>
-                <th>Удалить</th>
-            </tr>
-            </thead>
-            <tbody>
-
-            <?php
-                foreach ($files as $file): ?><?php $web_path = str_replace(Yii::getAlias('@webroot'),
-                    Yii::getAlias('@web'), $file); ?>
-                    <tr>
-                        <td><?= Html::img($web_path,
-                                ['alt' => Html::encode(basename($file)), 'width' => 200]); ?></td>
-                        <td><?= Html::encode($web_path) ?></td>
-                        <td><?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']),
-                                'javascript:void(0);',
-                                ['class' => 'post-click', 'data-file' => basename($file)]) ?></td>
-                    </tr>
-                <?php endforeach ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        Ничего не найдено
-    <?php endif ?>
+    ]); ?>
+</div>
