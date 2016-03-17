@@ -39,3 +39,11 @@ a.tags:hover {
     padding-right: 0;
     padding-left: 0;
 }
+
+.article-list .reed {
+    float: right;
+}
+
+.article-list .meta {
+    float: left;
+}

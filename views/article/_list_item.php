@@ -7,9 +7,15 @@
 
     <div class="description">
         <?= $model->desc ?>
-        <?= Html::a('Читать полностью &raquo;', ['view', 'id' => $model->id, 'key' => $model->key], ['class' => 'btn btn-green btn-sm']); ?>
+
     </div>
 
-    <div class="meta">
-        <?= $this->render('_tags', ['model' => $model]) ?>
+    <div class="item-footer">
+        <div class="reed">
+            <?= Html::a('Читать полностью &raquo;', ['view', 'id' => $model->id, 'key' => $model->key], ['class' => 'btn btn-green btn-sm']); ?>
+        </div>
+        <div class="meta">
+            <?= $this->render('_tags', ['model' => $model]) ?>
+        </div>
+        <div class="clearfix"></div>
     </div>
