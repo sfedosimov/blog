@@ -24,7 +24,7 @@
             'accept' => 'image/*'
         ],
         'clientOptions' => [
-            'maxFileSize' => 2000000
+            'maxFileSize' => 5000000
         ],
     ]); ?>
 
@@ -42,6 +42,11 @@
                 'label'     => 'Ссылка',
                 'attribute' => 'url',
                 'format'    => 'text'
+            ],
+            [
+                'label'     => 'Размер',
+                'attribute' => 'size',
+                'format'    => 'html'
             ],
             [
                 'label'     => 'Дата',

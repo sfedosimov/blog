@@ -21,6 +21,7 @@
             foreach ($files as $file) {
                 $webPath = Yii::getAlias('@web/uploads/ajax/') . basename($file);
                 $thumbnail = Yii::getAlias('@web/uploads/ajax/thumbnail/') . basename($file);
+                list($width, $height) = getimagesize($file);
                 $items[] = [
                     'preview' => Html::img($thumbnail, ['alt' => Html::encode(basename($file))]),
                     'url' => $webPath,
@@ -28,6 +29,8 @@
                         'javascript:void(0);',
                         ['class' => 'post-click','data-file' => basename($file)]),
                     'date_c' => date('d.m.Y H:i:s', filemtime($file)),
+                    'size' => $width . 'x' . $height . '<br>'
+                        . ((($size = round(filesize($file) / 1024)) > 1024) ? round($size / 1024, 2) . ' Мб' : ($size . ' Кб')),
                 ];
             }
 
