@@ -204,3 +204,7 @@ hr {
 .general-font {
     font-family: 'PT Sans', sans-serif;
 }
+
+ul.breadcrumb {
+    margin-left: 0;
+}

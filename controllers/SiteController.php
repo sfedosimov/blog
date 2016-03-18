@@ -49,11 +49,6 @@
             return $this->render('portfolio');
         }
 
-        public function actionBooks()
-        {
-            return $this->render('books');
-        }
-
         public function actionLogin()
         {
             if (!Yii::$app->user->isGuest) {
