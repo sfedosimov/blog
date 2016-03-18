@@ -76,6 +76,11 @@ class ArticleController extends Controller
     public function actionView($id, $key)
     {
         $this->layout = 'blog';
+        $model = $this->findModel($id);
+
+        if ($key !== $model->key) {
+            $this->redirect(['view', 'id' => $model->id, 'key' => $model->key]);
+        }
 
         return $this->render('view', [
             'model' => $this->findModel($id)
