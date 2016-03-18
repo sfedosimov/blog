@@ -6,6 +6,7 @@
     use yii\bootstrap\NavBar;
     use yii\widgets\Breadcrumbs;
     use app\assets\AppAsset;
+
     AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -35,7 +36,8 @@
             ]);
 
             $items = [
-                ['label' => 'Блог', 'url' => ['/article/index']],
+                ['label' => 'Блог', 'url' => ['/article/index']
+                    , 'active' => in_array(\Yii::$app->controller->action->id, ['index', 'view'])],
                 ['label' => 'Книги', 'url' => ['/site/books']],
                 ['label' => 'Портфолио', 'url' => ['/site/portfolio']],
                 ['label' => 'Обо мне', 'url' => ['/site/about']],
