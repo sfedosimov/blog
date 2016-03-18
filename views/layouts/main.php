@@ -37,8 +37,8 @@
 
             $items = [
                 ['label' => 'Блог', 'url' => ['/article/index']
-                    , 'active' => in_array(\Yii::$app->controller->action->id, ['index', 'view'])],
-                ['label' => 'Книги', 'url' => ['/site/books']],
+                    , 'active' => \Yii::$app->controller->id == 'article' && in_array(\Yii::$app->controller->action->id, ['index', 'view'])],
+                ['label' => 'Книги', 'url' => ['/book/index']],
                 ['label' => 'Портфолио', 'url' => ['/site/portfolio']],
                 ['label' => 'Обо мне', 'url' => ['/site/about']],
             ];
