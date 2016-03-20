@@ -15,6 +15,7 @@
     overflow: hidden;
     margin: 0 .8125em 1.625em;
     width: 22.125em;
+    border-radius: 6px;
 }
 
 .portfolio-list-item:hover {
