@@ -35,6 +35,13 @@
                 'img_url' => $this->string()->notNull(),
             ]);
 
+            $this->createTable('{{%portfolio}}', [
+                'id'          => $this->primaryKey(),
+                'title'       => $this->string()->notNull(),
+                'desc'        => $this->string()->notNull(),
+                'img_preview' => $this->string()->notNull(),
+            ]);
+
             $this->addForeignKey('article_to_tag', '{{%article_tag}}', 'article_id', '{{%article}}', 'id', 'CASCADE',
                 'CASCADE');
             $this->addForeignKey('tag_to_article', '{{%article_tag}}', 'tag_id', '{{%tag}}', 'id', 'CASCADE',

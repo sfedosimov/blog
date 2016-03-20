@@ -26,7 +26,7 @@
                     'blog/<tag:[\w\-]+>'          => 'article/index',
                     'blog'                        => 'article/index',
                     'about'                       => 'site/about',
-                    'portfolio'                   => 'site/portfolio',
+                    'portfolio'                   => 'portfolio/index',
                     'books'                       => 'book/index',
                     'upload'                      => 'upload/index',
                     'article/<id:\d+>'            => 'article/view',

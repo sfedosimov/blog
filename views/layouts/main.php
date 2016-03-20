@@ -39,7 +39,8 @@
                 ['label' => 'Блог', 'url' => ['/article/index']
                     , 'active' => \Yii::$app->controller->id == 'article' && in_array(\Yii::$app->controller->action->id, ['index', 'view'])],
                 ['label' => 'Книги', 'url' => ['/book/index']],
-                ['label' => 'Портфолио', 'url' => ['/site/portfolio']],
+                ['label' => 'Портфолио', 'url' => ['/portfolio/index']
+                    , 'active' => \Yii::$app->controller->id == 'portfolio' && in_array(\Yii::$app->controller->action->id, ['index', 'view'])],
                 ['label' => 'Обо мне', 'url' => ['/site/about']],
             ];
 
