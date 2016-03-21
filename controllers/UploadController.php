@@ -22,8 +22,8 @@
         {
             parent::init();
 
-            $this->directory = Yii::getAlias('@app/web/uploads/ajax/');
-            $this->web_directory = Yii::getAlias('@web/uploads/ajax/');
+            $this->directory = Yii::getAlias('@app/web/uploads/img/');
+            $this->web_directory = Yii::getAlias('@web/uploads/img/');
 
             if (!is_dir($this->directory)) {
                 mkdir($this->directory);

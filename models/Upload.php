@@ -16,11 +16,11 @@
         public $imageFile;
 
         public function getFilesDP() {
-            $files = FileHelper::findFiles(Yii::getAlias('@app/web/uploads/ajax/'), ['recursive' => false]);
+            $files = FileHelper::findFiles(Yii::getAlias('@app/web/uploads/img/'), ['recursive' => false]);
             $items = [];
             foreach ($files as $file) {
-                $webPath = Yii::getAlias('@web/uploads/ajax/') . basename($file);
-                $thumbnail = Yii::getAlias('@web/uploads/ajax/thumbnail/') . basename($file);
+                $webPath = Yii::getAlias('@web/uploads/img/') . basename($file);
+                $thumbnail = Yii::getAlias('@web/uploads/img/thumbnail/') . basename($file);
                 list($width, $height) = getimagesize($file);
                 $items[] = [
                     'preview' => Html::img($thumbnail, ['alt' => Html::encode(basename($file))]),
