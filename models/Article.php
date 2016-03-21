@@ -92,7 +92,7 @@
         }
 
         public function listTags() {
-            $res = $this->getTags()->asArray()->all();
+            $res = $this->getTags()->orderBy(['name' => SORT_ASC])->asArray()->all();
 
             return ArrayHelper::map($res, 'key', 'name') ?: [];
         }

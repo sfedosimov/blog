@@ -65,6 +65,7 @@ class Tag extends \yii\db\ActiveRecord
     public static function getADP() {
         return new ActiveDataProvider([
             'query' => static::find(),
+            'sort'=> ['defaultOrder' => ['name' => SORT_ASC]],
             'pagination' => false
         ]);
     }
