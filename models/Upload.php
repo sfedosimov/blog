@@ -34,10 +34,14 @@
                 ];
             }
 
+            uasort($items, function($a, $b) {
+                return strcmp(strtotime($b["date_c"]), strtotime($a["date_c"]));
+            });
+
             $dp = new ArrayDataProvider([
                 'allModels' => $items,
                 'sort' => [
-                    'attributes' => ['url', 'date_c'],
+                    'attributes' => ['date_c', 'url'],
                 ],
                 'pagination' => [
                     'pageSize' => 20,
