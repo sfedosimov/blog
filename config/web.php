@@ -1,6 +1,7 @@
 <?php
     return [
         'id'         => 'blog',
+        'name'       => 'Fedosimoff.ru',
         'basePath'   => realpath(__DIR__ . '/../'),
         'language' => 'ru-RU',
         'sourceLanguage' => 'en-US',

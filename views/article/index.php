@@ -4,10 +4,8 @@
     use yii\widgets\ListView;
 
     /* @var $this yii\web\View */
-    /* @var $searchModel app\models\ArticleSearch */
-    /* @var $dataProvider yii\data\ActiveDataProvider */
+    /* @var $dpArticle yii\data\ActiveDataProvider */
 
-    $this->title = 'Блог';
 ?>
 <div class="article-list">
     <?php if (!Yii::$app->user->isGuest): ?>

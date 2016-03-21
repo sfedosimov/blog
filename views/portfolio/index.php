@@ -6,7 +6,11 @@
     /* @var $this yii\web\View */
     /* @var $dataProvider yii\data\ActiveDataProvider */
 
-    $this->title = 'Портфолио';
+    $this->title = 'Портфолио | ' . \Yii::$app->name;
+    $this->registerMetaTag([
+        'name' => 'description',
+        'content' => 'Список моих работ'
+    ]);
     $this->registerCssFile(\Yii::getAlias('@web/css/portfolio.css'), ['depends' => ['app\assets\AppAsset']]);
 ?>
 <div class="portfolio-list">

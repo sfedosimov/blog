@@ -6,11 +6,11 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Portfolio */
 
-$this->title = $model->title;
+$this->title = $model->title . ' | Портфолио | ' . \Yii::$app->name;
 ?>
 <div class="portfolio-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($model->title) ?></h1>
 
     <?php if (!Yii::$app->user->isGuest): ?>
     <p>

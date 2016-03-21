@@ -1,6 +1,10 @@
 <?php
     /* @var $this yii\web\View */
-    $this->title = 'Обо мне';
+    $this->title = 'Обо мне | ' . \Yii::$app->name;
+    $this->registerMetaTag([
+        'name' => 'description',
+        'content' => 'Резюме PHP разработчика.'
+    ]);
     $this->registerCssFile(Yii::getAlias('@web/css/about.css'), ['depends' => ['app\assets\AppAsset']]);
 ?>
 

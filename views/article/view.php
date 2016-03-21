@@ -1,17 +1,22 @@
 <?php
 
     use yii\helpers\Html;
+    use yii\helpers\HtmlPurifier;
 
     /* @var $this yii\web\View */
     /* @var $model app\models\Article */
 
-    $this->title = $model->title;
+    $this->title = $model->title . ' | ' . \Yii::$app->name;
+    $this->registerMetaTag([
+        'name' => 'description',
+        'content' => HtmlPurifier::process($model->desc, ['HTML.Allowed' => ''])
+    ]);
 ?>
 
 
 <div class="article-view">
-    <h1 class="margin-top-0px"><?= Html::encode($this->title) ?></h1>
-    <p class="date-publish color-grey"><?= Yii::$app->formatter->asDate($model->created_at) ?></p>
+    <h1 class="margin-top-0px"><?= Html::encode($model->title) ?></h1>
+    <div class="date-publish color-grey"><?= Yii::$app->formatter->asDate($model->created_at) ?></div>
     <?php if (!Yii::$app->user->isGuest): ?>
     <p>
         <?= Html::a('Редактировать', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>

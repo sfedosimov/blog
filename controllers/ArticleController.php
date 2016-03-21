@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\ArticleTag;
+use app\models\Tag;
 use Yii;
 use app\models\Article;
 use app\models\ArticleSearch;
@@ -57,8 +58,18 @@ class ArticleController extends Controller
             $request['ArticleSearch']['text'] = $q;
         } else if($tag) {
             $request['ArticleSearch']['art_tags'][] = $tag;
+            $mTag = Tag::findOne(['key' => $tag]);
+            \Yii::$app->view->title = 'Статьи на тему "' . $mTag->name . '" | ' . \Yii::$app->name;
         }
 
+        if (!$tag) {
+            \Yii::$app->view->title = 'Статьи | ' . \Yii::$app->name;
+
+            \Yii::$app->view->registerMetaTag([
+                'name' => 'description',
+                'content' => 'Статьи, заметки, переводы, инструкции и многое другое на компьютерную тематику'
+            ]);
+        }
 
         $smArticle = new ArticleSearch();
         $dpArticle = $smArticle->search($request);

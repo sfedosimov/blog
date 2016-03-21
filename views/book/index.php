@@ -6,7 +6,11 @@
     /* @var $this yii\web\View */
     /* @var $dataProvider yii\data\ActiveDataProvider */
 
-    $this->title = 'Книги';
+    $this->title = 'Книги | ' . \Yii::$app->name;
+    $this->registerMetaTag([
+        'name' => 'description',
+        'content' => 'Список книг из моей колекции, советую почитать'
+    ]);
     $this->registerCssFile(\Yii::getAlias('@web/css/books.css'), ['depends' => ['app\assets\AppAsset']]);
 ?>
 <div class="books-list">
