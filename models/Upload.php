@@ -15,8 +15,15 @@
          */
         public $imageFile;
 
-        public function getFilesDP() {
-            $files = FileHelper::findFiles(Yii::getAlias('@app/web/uploads/img/'), ['recursive' => false]);
+        public function search($q) {
+
+            $opt = ['recursive' => false];
+
+            if (!is_null($q) && !empty($q)) {
+                $opt['only'] = [$q];
+            }
+
+            $files = FileHelper::findFiles(Yii::getAlias('@app/web/uploads/img/'), $opt);
             $items = [];
             foreach ($files as $file) {
                 $webPath = Yii::getAlias('@web/uploads/img/') . basename($file);

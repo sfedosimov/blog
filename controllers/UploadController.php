@@ -49,11 +49,11 @@
             ]);
         }
 
-        public function actionIndex()
+        public function actionIndex($q = null)
         {
             $model = new Upload();
 
-            return $this->render('index', ['model' => $model]);
+            return $this->render('index', ['model' => $model, 'dataProvider' => $model->search($q)]);
         }
 
         public function actionImageUpload()

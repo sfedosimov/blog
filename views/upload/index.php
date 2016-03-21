@@ -1,5 +1,6 @@
 <?php
     use dosamigos\fileupload\FileUploadUI;
+    use yii\bootstrap\ActiveForm;
     use yii\grid\GridView;
     use yii\helpers\Url;
 
@@ -29,8 +30,24 @@
     ]); ?>
 
     <h2>Загруженные файлы</h2>
+
+    <p>
+        <?php $form = ActiveForm::begin([
+            'action' => ['index'],
+            'method' => 'get',
+        ]); ?>
+
+        <div class="input-group">
+            <input type="text" value="<?= \Yii::$app->request->getQueryParam('q') ?>" class="form-control" name="q" id="articlesearch-text" title="">
+            <span class="input-group-btn">
+              <button class="btn btn-green" type="submit">Искать!</button>
+            </span>
+        </div>
+
+        <?php ActiveForm::end(); ?>
+    </p>
     <?= GridView::widget([
-        'dataProvider' => $model->getFilesDP(),
+        'dataProvider' => $dataProvider,
         'columns'      => [
             [
                 'label'          => 'Превью',
