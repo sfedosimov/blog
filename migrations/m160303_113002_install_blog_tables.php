@@ -38,7 +38,7 @@
             $this->createTable('{{%portfolio}}', [
                 'id'          => $this->primaryKey(),
                 'title'       => $this->string()->notNull(),
-                'desc'        => $this->string()->notNull(),
+                'desc'        => $this->text()->notNull(),
                 'img_preview' => $this->string()->notNull(),
             ]);
 
