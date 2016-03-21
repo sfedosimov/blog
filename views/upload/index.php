@@ -35,7 +35,7 @@
             [
                 'label'          => 'Превью',
                 'attribute'      => 'preview',
-                'format'         => 'html',
+                'format'         => 'raw',
                 'contentOptions' => ['style' => 'width: 10%;']
             ],
             [

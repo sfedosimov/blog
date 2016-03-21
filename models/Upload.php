@@ -23,7 +23,7 @@
                 $thumbnail = Yii::getAlias('@web/uploads/img/thumbnail/') . basename($file);
                 list($width, $height) = getimagesize($file);
                 $items[] = [
-                    'preview' => Html::img($thumbnail, ['alt' => Html::encode(basename($file))]),
+                    'preview' => Html::a(Html::img($thumbnail, ['alt' => Html::encode(basename($file))]), $webPath, ['target' => '_blank']),
                     'url' => $webPath,
                     'delete' => Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']),
                         'javascript:void(0);',
