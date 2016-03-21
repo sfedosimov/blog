@@ -81,6 +81,8 @@ class ArticleSearch extends Article
             ->orFilterWhere(['like', 'desc', $this->text])
             ->orFilterWhere(['like', 'text', $this->text]);
 
+        $query->orderBy(['updated_at' => SORT_DESC]);
+
         return $dataProvider;
     }
 }

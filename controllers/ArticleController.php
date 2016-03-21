@@ -106,7 +106,7 @@ class ArticleController extends Controller
                 $model->link('articleTags', $obj);
             }
 
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'id' => $model->id, 'key' => $model->key]);
         } else {
             return $this->render('create', [
                 'model' => $model,
