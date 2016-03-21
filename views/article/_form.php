@@ -22,6 +22,7 @@
     <?= $form->field($model, 'desc')->widget(CKEditor::className(), [
         'options' => ['rows' => 6],
         'preset' => 'standart',
+        'clientOptions' => ['enterMode' => '2' /* 2 = CKEDITOR.ENTER_BR */ ]
     ]) ?>
 
     <?= $form->field($model, 'text')->widget(CKEditor::className(), [

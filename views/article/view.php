@@ -30,7 +30,7 @@
     </p>
     <?php endif ?>
     <div class="article-body">
-        <p><em><?= $model->desc ?></em></p>
+        <p><em>[<?= $model->desc ?>]</em></p>
 
         <?= $model->text ?>
     </div>
