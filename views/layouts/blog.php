@@ -13,8 +13,7 @@
     </div>
     <div class="column-right col-xs-12 col-md-4">
         <?php
-            $m = \app\models\ArticleSearch::getModelWithLoad();
-            echo $this->render('/article/_search', ['model' => $m]);
+            echo $this->render('/article/_search');
         ?>
         <h3>Теги:</h3>
         <?= yii\widgets\ListView::widget([
