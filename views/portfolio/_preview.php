@@ -5,7 +5,7 @@
     /* @var $index integer */
 ?>
 
-<?= Html::a('<h2 class="name">'.$model->title.'</h2><div class="cover-wrapper"><img src="'.$model->img_preview.'" class="cover"></div>', ['view', 'id' => $model->id], ['class' => 'portfolio-list-item']) ?>
+<?= Html::a('<h2 class="name">'.$model->title.'</h2><div class="cover-wrapper"><img src="'. \Yii::getAlias($model->img_preview) .'" class="cover"></div>', ['view', 'id' => $model->id], ['class' => 'portfolio-list-item']) ?>
 
 <?php if ($index > 2 && $index % 2 === 0): ?>
     <div class="separator-3"></div>
