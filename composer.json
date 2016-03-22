@@ -1,11 +1,13 @@
 {
   "require": {
     "yiisoft/yii2": "*",
-    "yiisoft/yii2-gii": "*",
     "skeeks/yii2-widget-chosen": "*",
     "2amigos/yii2-ckeditor-widget": "dev-master",
     "2amigos/yii2-file-upload-widget": "~1.0",
     "yiisoft/yii2-imagine": "~2.0.0"
+  },
+  "require-dev": {
+    "yiisoft/yii2-gii": "*"
   },
   "extra": {
     "asset-installer-paths": {
