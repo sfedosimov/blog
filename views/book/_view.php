@@ -25,10 +25,10 @@
         }
     ?>
 </div>
-<?php if ($index > 3 && $index % 3 === 0): ?>
+<?php if ($index % 3 === 2): ?>
     <div class="separator-3"></div>
 <?php endif ?>
-<?php if ($index > 4 && $index % 4 === 0): ?>
+<?php if ($index % 4 === 3): ?>
     <div class="separator-4"></div>
 <?php endif ?>
 
