@@ -34,6 +34,7 @@
         {
             $dataProvider = new ActiveDataProvider([
                 'query'      => Book::find(),
+                'sort'       => ['defaultOrder' => ['id' => SORT_DESC]],
                 'pagination' => false
             ]);
 
