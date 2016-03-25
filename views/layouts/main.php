@@ -76,7 +76,7 @@
 
     <footer class="footer">
         <div class="container">
-            <span><i class="fa fa-envelope"></i> <a href="mailto:sergey@fedosimoff.ru">sergey@fedosimoff.ru</a></span>
+            <span><i class="fa fa-envelope"></i> <a href="mailto:sfedosimov@gmail.com">sfedosimov@gmail.com</a></span>
             <br>
             <span><i class="fa fa-skype"></i> <a href="skype:Urishev?call">Urishev</a></span>
         </div>
