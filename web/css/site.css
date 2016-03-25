@@ -208,3 +208,8 @@ hr {
 ul.breadcrumb {
     margin-left: 0;
 }
+
+img.scope-size {
+    display: block;
+    width: 100%;
+}
