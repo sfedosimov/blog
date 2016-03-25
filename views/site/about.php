@@ -16,7 +16,7 @@
                     <img src="<?= Yii::getAlias('@web/img/') ?>ava.jpg" class="photo">
 
                     <h1 class="name-full">
-                        <span class="name">Федосимов Сергей</span> <span class="nickname">m0ntm0nk</span>
+                        <span class="name">Федосимов Сергей</span> <span class="nickname">sfedosimov</span>
                     </h1>
                 </div>
 
@@ -37,7 +37,7 @@
                     <b>Контакты</b>
 
                     <p>
-                        Email: <a href="mailto:sergey@fedosimoff.ru" target="_blank">sergey@fedosimoff.ru</a><br> Skype:
+                        Email: <a href="mailto:sfedosimov@gmail.com" target="_blank">sfedosimov@gmail.com</a><br> Skype:
                         <a href="skype:Urishev?call" target="_blank">Urishev</a>
                     </p>
                     <hr>
