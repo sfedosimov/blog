@@ -28,7 +28,7 @@
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'Лого',
+                'brandLabel' => 'Fedosimoff',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-green navbar-small',
