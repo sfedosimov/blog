@@ -47,3 +47,7 @@ a.tags:hover {
 .article-list .meta {
     float: left;
 }
+
+.article-body h2, .article-body h3, .article-body h4 {
+    margin-bottom: 1.225em;
+}
