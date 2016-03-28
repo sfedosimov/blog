@@ -2,7 +2,16 @@ Options +FollowSymLinks
 IndexIgnore */*
 RewriteEngine on
 
+RewriteBase /
+
 # Если файл или каталог не существует, идём к /web/index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*[^/])$ $1/ [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^fedosimoff.ru
+RewriteRule (.*) http://www.fedosimoff.ru/$1 [R=301,L]
+
 RewriteRule . index.php
