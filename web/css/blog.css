@@ -1,0 +1,53 @@
+a.tags, a.tags:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+a.tags:hover {
+    color: #ffce15;
+}
+
+.label-tags {
+    background-color: #00ad89;
+}
+
+.date-publish {
+    position: relative;
+    margin-top: -5px;
+}
+
+.menu-tags {
+    list-style-type: circle;
+    padding-left: 20px;
+}
+
+.item-article, .article-view, .article-search {
+    margin-bottom: 1.625em;
+}
+
+.article-view img {
+    max-width: 100%;
+    border-radius: 6px;
+    border: 3px solid #f5f5f5;
+}
+
+.article-list, .article-view {
+    margin-right: 1.625em;
+}
+
+.column-left, .column-right {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.article-list .reed {
+    float: right;
+}
+
+.article-list .meta {
+    float: left;
+}
+
+.article-body h2, .article-body h3, .article-body h4 {
+    margin-bottom: 1.225em;
+}

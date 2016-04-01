@@ -1,0 +1,191 @@
+.about-body {
+    background-color: #ecf0f5;
+}
+
+.about-sidebar {
+    float: left;
+    width: 312px;
+}
+
+.about-content {
+    margin-left: 338px;
+}
+
+.about-block-wrapper {
+    background: #fff;
+    border-top: #00ad89 solid 3px;
+    margin-bottom: 1.625em;
+    border-radius: 6px;
+}
+
+.about-block-container {
+    border: #d2d6de solid 1px;
+    border-top: none;
+}
+
+.about-block-container h2 {
+    border-bottom: #eee solid 1px;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 5px 10px;
+}
+
+.about-block-container .about-block-content {
+    padding: 10px;
+}
+
+.about-block-container .about-block-text {
+}
+
+.about-block-container .about-block-text p {
+    margin-bottom: 10px;
+}
+
+.about-main {
+    margin-bottom: 1.625em;
+}
+
+.about-main .about-block-container {
+    padding: 10px;
+}
+
+.about-main .card {
+    text-align: center;
+}
+
+.about-main .name-full {
+    font-weight: normal;
+}
+
+.about-main .name, .about-main .nickname {
+    display: block;
+}
+
+.about-main .name {
+    color: #333;
+    font-size: .875em;
+}
+
+.about-main .nickname {
+    color: #777;
+    font-size: .583em;
+}
+
+.about-main .photo {
+    border: #d2d6de solid 1px;
+    padding: 3px;
+    width: 75%;
+}
+
+.about-main .links {
+    border-top: #eee solid 1px;
+    font-size: 13px;
+    list-style-type: none;
+    margin: 10px 0;
+    padding-right: 5px;
+}
+
+.about-main .links .link {
+    background: no-repeat right center;
+    border-bottom: #eee solid 1px;
+    display: block;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+.about-main .links .link:before {
+    float: right;
+    font-size: 22px;
+    line-height: 40px;
+}
+
+.about-main .minor-data {
+    font-size: 13px;
+}
+
+.about-main p {
+    margin-bottom: 0;
+    color: #777;
+}
+
+.about-main hr {
+    border: none;
+    border-top: 1px solid #eee;
+    height: 0;
+    margin: 10px 0;
+}
+
+.about-works-history .work-place {
+    border-top: #eee solid 1px;
+    margin-bottom: 1.625em;
+}
+
+.about-works-history .work-place:first-of-type {
+    border-top: none
+}
+
+.about-works-history .work-place:last-of-type {
+    margin-bottom: 0;
+}
+
+.about-works-history .organization-name {
+    color: #00ad89;
+}
+
+.about-works-history .work-period {
+    float: right;
+    color: #aaa;
+}
+
+.about-sidebar .skill-list {
+    list-style-type: none;
+    margin: 0;
+}
+
+.about-sidebar .skill-list li {
+    text-align: left;
+}
+
+.about-sidebar .skill-list li:before {
+    color: #00ad89;
+    content: "» ";
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .about-sidebar {
+        float: none;
+        width: 100%;
+    }
+
+    .about-content {
+        float: none;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .about-content p {
+        text-align: left;
+    }
+
+    .about-works-history .work-period {
+        float: none;
+        display: block;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+
+    .about-sidebar {
+        float: left;
+        width: 260px;
+    }
+
+    .about-content {
+        margin-left: 286px;
+    }
+
+    .about-content p {
+        text-align: left;
+    }
+}
